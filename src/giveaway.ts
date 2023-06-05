@@ -439,7 +439,7 @@ export async function giveaway(
 					]);
 
 					if (interaction) {
-						if(!extInteraction.deferred)
+						if(!interaction.deferred)
 						  await extInteraction.deferReply({ ephemeral: true })
 						await extInteraction.followUp({
 							content: 'Giveaway has started.',

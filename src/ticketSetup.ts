@@ -107,7 +107,7 @@ export async function ticketSetup(
 
 			if (!msgOrint.member.permissions.has(PermissionFlagsBits.Administrator)) {
 				if (interaction) {
-					if(!extInteraction.deferred)
+					if(!interaction.deferred)
                       await extInteraction.deferReply({ ephemeral: true })
 					return await extInteraction.followUp({
 						content: 'You are not an admin to create a Ticket Panel',
@@ -175,7 +175,7 @@ export async function ticketSetup(
 			if (options?.embed?.url) embed.setURL(options.embed?.url);
 
 			if (interaction) {
-				if(!extInteraction.deferred)
+				if(!interaction.deferred)
                   await extInteraction.deferReply({ ephemeral: true })
 				extInteraction.followUp({
 					content: 'Done. Setting Ticket to that channel'

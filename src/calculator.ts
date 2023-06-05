@@ -176,7 +176,7 @@ export async function calculator(
 			const extMessage = msgOrInt as ExtendedMessage;
 
 			if (!message) {
-				if(!extInteraction.deferred)
+				if(!interaction.deferred)
 				  await extInteraction.deferReply({ ephemeral: false })
 				await extInteraction.reply({
 					embeds: [embed],

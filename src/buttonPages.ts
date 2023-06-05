@@ -264,7 +264,7 @@ export async function buttonPages(
 
 			if (interaction) {
 				if (options?.count) {
-					if(!extInteraction.deferred)
+					if(!interaction.deferred)
 					  await extInteraction.deferReply({ ephemeral: false })
 					await extInteraction.followUp({
 						embeds: [pages[0].setFooter({ text: `Page 1/${pages.length}` })],
@@ -273,7 +273,7 @@ export async function buttonPages(
 						fetchReply: true
 					});
 				} else {
-					if(!extInteraction.deferred)
+					if(!interaction.deferred)
 					  await extInteraction.deferReply({ ephemeral: false })
 					await extInteraction.followUp({
 						embeds: [pages[0]],

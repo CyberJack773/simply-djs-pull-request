@@ -185,7 +185,7 @@ export async function embedCreator(
 			const extMessage = msgOrInt as ExtendedMessage;
 
 			if (interaction) {
-				if(!extInteraction.deferred)
+				if(!interaction.deferred)
 				  await extInteraction.deferReply({ ephemeral: false })
 				msg = await extInteraction.followUp({
 					embeds: [embed],

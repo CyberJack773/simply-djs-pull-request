@@ -203,7 +203,7 @@ export async function rps(
 					return extMessage.reply('You cannot play with yourself!');
 			} else if (interaction) {
 				if (!opponent){
-					if(!extInteraction.deferred)
+					if(!interaction.deferred)
 					await extInteraction.deferReply({ ephemeral: true });
 							  return await extInteraction.followUp({
 								  content: 'No opponent mentioned!',
@@ -211,7 +211,7 @@ export async function rps(
 							  });
 				  }
 						  if (opponent.bot){
-					if(!extInteraction.deferred)
+					if(!interaction.deferred)
 					await extInteraction.deferReply({ ephemeral: true });
 							  return await extInteraction.followUp({
 								  content: "You can't play against bots",
@@ -219,7 +219,7 @@ export async function rps(
 							  });
 				  }
 						  if (opponent.id === message.member.user.id){
-					if(!extInteraction.deferred)
+					if(!interaction.deferred)
 					await extInteraction.deferReply({ ephemeral: true });
 							  return await extInteraction.followUp({
 								  content: 'You cannot play with yourself!',
@@ -270,7 +270,7 @@ export async function rps(
 			let m: Message;
 
 			if (interaction) {
-				if(!extInteraction.deferred)
+				if(!interaction.deferred)
                   await extInteraction.deferReply({ ephemeral: false });
 				m = await extInteraction.followUp({
 					content: `<@${opponent.id}>. You got a Rock Paper Scissor invitation !`,

@@ -93,8 +93,8 @@ export async function betterBtnRole(
 					function: 'betterBtnRole'
 				});
 			else {
-				if(!extInteraction.deferred)
-				  await extInteraction.deferReply({ ephemeral: true })
+				if(!interaction.deferred)
+				  await interaction.deferReply({ ephemeral: true })
 				return interaction.followUp({
 					content:
 						options?.contents?.invalidMessage ||
@@ -113,8 +113,8 @@ export async function betterBtnRole(
 					function: 'betterBtnRole'
 				});
 			else {
-				if(!extInteraction.deferred)
-				  await extInteraction.deferReply({ ephemeral: false })
+				if(!interaction.deferred)
+				  await interaction.deferReply({ ephemeral: false })
 				return interaction.followUp({
 					content:
 						options?.contents?.otherUserMessage ||
@@ -154,8 +154,8 @@ export async function betterBtnRole(
 									components: msg.components
 								});
 
-								if(!extInteraction.deferred)
-				                  await extInteraction.deferReply({ ephemeral: true })
+								if(!interaction.deferred)
+				                  await interaction.deferReply({ ephemeral: true })
 								return interaction.followUp({
 									content:
 										options?.contents?.update ||
@@ -200,8 +200,8 @@ export async function betterBtnRole(
 							const linkRow =
 								new ActionRowBuilder<ButtonBuilder>().addComponents([link]);
 
-							if(!extInteraction.deferred)
-							  await extInteraction.deferReply({ ephemeral: true })
+							if(!interaction.deferred)
+							  await interaction.deferReply({ ephemeral: true })
 							interaction.followUp({
 								content:
 									options?.contents?.success ||
@@ -215,8 +215,8 @@ export async function betterBtnRole(
 						});
 				} else {
 					if (msg.components.length === 5) {
-						if(!extInteraction.deferred)
-				          await extInteraction.deferReply({ ephemeral: true })
+						if(!interaction.deferred)
+				          await interaction.deferReply({ ephemeral: true })
 						return interaction.followUp({
 							content:
 								options?.contents?.overload ||
@@ -247,8 +247,8 @@ export async function betterBtnRole(
 
 								const linkRow =
 									new ActionRowBuilder<ButtonBuilder>().addComponents([link]);
-								if(!extInteraction.deferred)
-								  await extInteraction.deferReply({ ephemeral: true })
+								if(!interaction.deferred)
+								  await interaction.deferReply({ ephemeral: true })
 								interaction.followUp({
 									content:
 										options?.contents?.update ||
@@ -289,8 +289,8 @@ export async function betterBtnRole(
 								});
 							})
 							.catch((err) => {
-								if(!extInteraction.deferred)
-				                  await extInteraction.deferReply({ ephemeral: true })
+								if(!interaction.deferred)
+				                  await interaction.deferReply({ ephemeral: true })
 								interaction.followUp({ content: `\`${err.stack}\`` });
 							});
 					}
@@ -314,8 +314,8 @@ export async function betterBtnRole(
 					msg.components.length === 0 ||
 					!msg.components[0]
 				) {
-					if(!extInteraction.deferred)
-				      await extInteraction.deferReply({ ephemeral: true })
+					if(!interaction.deferred)
+				      await interaction.deferReply({ ephemeral: true })
 					return interaction.followUp({
 						content:
 							options?.contents?.noButton ||
@@ -353,8 +353,8 @@ export async function betterBtnRole(
 													link
 												]);
 
-											if(!extInteraction.deferred)
-											  await extInteraction.deferReply({ ephemeral: true })
+											if(!interaction.deferred)
+											  await interaction.deferReply({ ephemeral: true })
 											return interaction.followUp({
 												content:
 													options?.contents?.success ||
@@ -381,8 +381,8 @@ export async function betterBtnRole(
 													link
 												]);
 
-											if(!extInteraction.deferred)
-											  await extInteraction.deferReply({ ephemeral: true })
+											if(!interaction.deferred)
+											  await interaction.deferReply({ ephemeral: true })
 											return interaction.followUp({
 												content:
 													options?.contents?.success ||

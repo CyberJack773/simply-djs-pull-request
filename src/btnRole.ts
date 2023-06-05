@@ -83,7 +83,7 @@ export async function btnRole(
 						PermissionFlagsBits.Administrator
 					)
 				)
-				if(!extInteraction.deferred)
+				if(!msgOrInt.deferred)
 				  await extInteraction.deferReply({ ephemeral: true })
 					extInteraction.followUp({
 						content: 'You need `ADMINISTRATOR` permission to use this command'
@@ -222,14 +222,14 @@ export async function btnRole(
 
 				if (extInteraction?.commandId) {
 					if (!options.embed) {
-						if(!extInteraction.deferred)
+						if(!interaction.deferred)
 						  await extInteraction.deferReply({ ephemeral: false })
 						extInteraction.followUp({
 							content: options?.content || '** **',
 							components: row
 						});
 					} else {
-						if(!extInteraction.deferred)
+						if(!interaction.deferred)
 				          await extInteraction.deferReply({ ephemeral: false })
 						extInteraction.followUp({
 							content: options.content || '** **',

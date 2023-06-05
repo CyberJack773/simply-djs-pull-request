@@ -118,7 +118,7 @@ export async function tictactoe(
 
 			if (limiter[id].limit >= options?.max || 5) {
 				if (interaction) {
-					if(!extInteraction.deferred)
+					if(!interaction.deferred)
 					  await extInteraction.deferReply({ ephemeral: true })
 							  return extInteraction.followUp({
 								  content:
@@ -182,7 +182,7 @@ export async function tictactoe(
 					});
 
 					if (opponent.bot) {
-						if(!extInteraction.deferred)
+						if(!interaction.deferred)
 						  await extInteraction.deferReply({ ephemeral: true })
 								  return extInteraction.followUp({
 									  content: 'You cannot play with bots!',
@@ -191,7 +191,7 @@ export async function tictactoe(
 					  }
 			  
 							  if (opponent.id == (message as ExtendedInteraction).user.id){
-						if(!extInteraction.deferred)
+						if(!interaction.deferred)
 						  await extInteraction.deferReply({ ephemeral: true })
 								  return extInteraction.followUp({
 									  content: 'You cannot play with yourself!',
@@ -282,7 +282,7 @@ export async function tictactoe(
 			let m: Message;
 
 			if (interaction) {
-				if(!extInteraction.deferred)
+				if(!interaction.deferred)
                   await extInteraction.deferReply({ ephemeral: false })
 				m = await extInteraction.followUp({
 					content: `<@${opponent.id}>, You got a tictactoe request from ${
@@ -1035,7 +1035,7 @@ async function ai(
 
 	if (limiter[id].limit >= options?.max || 5) {
 		if (interaction){
-			if(!extInteraction.deferred)
+			if(!interaction.deferred)
 			  extInteraction.deferReply({ ephemeral: true })
 			return extInteraction.followUp({
 					  content: 'Sorry, There is a game happening right now. Please try later.'
@@ -1103,7 +1103,7 @@ async function ai(
 	const buttons = update();
 
 	if (interaction) {
-		if(!extInteraction.deferred)
+		if(!interaction.deferred)
           await extInteraction.deferReply()
 		message = await extInteraction.followUp({
 			embeds: [gameEmbed],
